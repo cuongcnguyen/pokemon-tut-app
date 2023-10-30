@@ -9,10 +9,19 @@ interface Pokemons {
   url: string;
 }
 
+export interface Detail{
+  id: number;
+  isOpened: boolean;
+}
+
 const App:React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [nextUrl, setNextUrl] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
+  const [viewDetail, setViewDetail] = useState<Detail>({
+    id:0,
+    isOpened:false,
+  });
   useEffect(()=>{
     const getPokemon = async() =>{
       const res = await axios.get(
@@ -45,7 +54,7 @@ const App:React.FC = () => {
   <div className="App">
     <div className="container">
       <header className="pokemon-header">Pokemon</header>     
-      <PokemonCollection pokemons={pokemons}/>
+      <PokemonCollection pokemons={pokemons} viewDetail={viewDetail} setViewDetail={setViewDetail}/>
       <div className="btn">
         <button onClick={loadMore}> {loading ? 'Loading ...' : 'Load more'} </button>
       </div>
