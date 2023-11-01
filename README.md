@@ -1,3 +1,7 @@
+THIS PROJECT IS DEPLOYED BY THIS URL:
+https://pokemon-app-final.vercel.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
