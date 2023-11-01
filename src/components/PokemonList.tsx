@@ -24,7 +24,7 @@ const PokemonList:React.FC<Props> = (props) => {
     const closeDetail = () =>{
         setViewDetail({
             id:0,
-            isOpened:false,
+            isOpened:false
         });
     }
         

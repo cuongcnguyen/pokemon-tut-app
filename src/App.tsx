@@ -55,9 +55,12 @@ const App:React.FC = () => {
     <div className="container">
       <header className="pokemon-header">Pokemon</header>     
       <PokemonCollection pokemons={pokemons} viewDetail={viewDetail} setViewDetail={setViewDetail}/>
-      <div className="btn">
-        <button onClick={loadMore}> {loading ? 'Loading ...' : 'Load more'} </button>
-      </div>
+      {!viewDetail.isOpened && (
+        <div className="btn">
+          <button onClick={loadMore}> {loading ? 'Loading ...' : 'Load more'} </button>
+        </div>
+      )}
+      
     </div>
   </div>);
 }
